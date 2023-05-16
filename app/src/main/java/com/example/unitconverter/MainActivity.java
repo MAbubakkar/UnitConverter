@@ -43,6 +43,7 @@ int result;
         result = val1 /*+ val2*/;
        // add.setText("Result : " + result);
         String s = "";
+        // master comment
         // UI changes
         String table = val1 + " * ";
         for (int i=1;i<=val2;i++)
