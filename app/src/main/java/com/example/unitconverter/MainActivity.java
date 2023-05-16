@@ -1,5 +1,6 @@
 package com.example.unitconverter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,9 @@ EditText number2;
 TextView add;
 Button button;
 int result;
+
+public static final String EXTRA_NAME = "OUTPUT_KEY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +57,8 @@ int result;
         }
         add.setText(s);
         Toast.makeText(view.getContext(), "Table of : "+val1,Toast.LENGTH_LONG).show();
-        Toast.makeText(view.getContext(),"HELLO",Toast.LENGTH_SHORT).setDuration(Toast.LENGTH_LONG);
+        Intent intent = new Intent(this, Output.class);
+        intent.putExtra(EXTRA_NAME,s);
+        startActivity(intent);
     }
 }
